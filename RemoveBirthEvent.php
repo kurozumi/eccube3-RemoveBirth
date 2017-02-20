@@ -31,11 +31,7 @@ class RemoveBirthEvent
     {
         $search = "{% block javascript %}";
         $tag = <<< EOT
-                <script>
-                    $(function(){
-                        $("#top_box__birth dl:first-child").remove();
-                    });
-                </script>
+<script>$(function(){ $("#top_box__birth dl:first-child").remove();});</script>\n
 EOT;
         $source = str_replace($search, $search . $tag, $event->getSource());
         $event->setSource($source);
@@ -45,13 +41,9 @@ EOT;
     public function onRenderEntryConfirm(TemplateEvent $event)
     {
         $script = <<< EOT
-                {% block javascript %}
-                <script>
-                    $(function(){
-                        $("#confirm_box__birth").remove();
-                    });
-                </script>
-                {% endblock javascript %}
+{% block javascript %}
+<script>$(function(){ $("#confirm_box__birth").remove();});</script>\n
+{% endblock javascript %}
 EOT;
         $event->setSource($event->getSource() . $script);
 
@@ -61,11 +53,7 @@ EOT;
     {
         $search = "{% block javascript %}";
         $tag = <<< EOT
-                <script>
-                    $(function(){
-                        $("#detail_box__birth").remove();
-                    });
-                </script>
+<script>$(function(){ $("#detail_box__birth").remove();});</script>\n
 EOT;
         $source = str_replace($search, $search . $tag, $event->getSource());
         $event->setSource($source);
