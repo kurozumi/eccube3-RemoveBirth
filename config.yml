@@ -1,4 +1,4 @@
-name: '生年月日削除プラグイン for EC-CUBE3'
+name: '生年月日項目削除プラグイン for EC-CUBE3'
 code: RemoveBirth
 version: 1.0.0
 event: RemoveBirthEvent
